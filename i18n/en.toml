@@ -1,0 +1,18 @@
+[home]
+    other = 'home'
+[Posts]
+    other = 'Posts'
+[News]
+    other = 'News'
+[PrivacyPolicy]
+    other = 'Privacy Policy'
+[About]
+    other = 'About'
+[Contact]
+    other = 'Contact'
+[Allrightsreserved]
+    other = 'No rights reserved'
+[Madewith]
+    other = 'Made with'
+[Categories]
+    other = 'Categories'

@@ -1,0 +1,11 @@
+{{define "main"}}
+
+<section class="body-font">
+    <!-- <script src="/public-plans-forms-lib.umd.js" defer></script> -->
+    {{ $forms := resources.Get "js/public-forms.js" | js.Build }}
+  <script src="{{ $forms.RelPermalink }}" defer></script>
+    <provider-contact-form api="https://forms.pbasconnect.com"></provider-contact-form>
+</section>
+
+
+{{end}}

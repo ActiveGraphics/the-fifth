@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="h-full" lang="{{ .Language.Lang }}">
+
+<head>
+    {{ partial "head.html" . }}
+</head>
+
+<body class="h-full">
+    {{ partial "header.html" . }}
+    {{ partial "nav.html" . }}
+    <section class="bg-white container border-r border-l mx-auto flex flex-wrap flex-col md:flex-row overflow-hidden">
+        <div class="m-auto w-full">
+            <div class="container flex flex-wrap flex-col w-full m-auto">
+                {{ block "main" . }}{{ end }}
+            </div>
+        </div>
+    </section>
+
+    {{ partial "footer" . }}
+    {{ partial "finalfooter" . }}
+</body>
+
+</html>

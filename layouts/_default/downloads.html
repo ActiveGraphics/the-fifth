@@ -1,0 +1,94 @@
+{{define "main"}}
+<section class="body-font bg-gray-100">
+    <span class="material-symbols-outlined align-middle float-right pr-5 pt-5 text-gray-400" onclick="downloadAll()">download</span>
+        <div id="main-container">
+                {{ .Content}}
+        </div>
+
+</section>
+<style>
+.material-symbols-outlined {
+    cursor:pointer;
+}
+.accordion-item {
+	background-color: #ee2738 !important;
+	border:1px solid #ee2738 !important;
+	color: #fff !important;
+}
+i.arrow-down {
+	border: solid #fff !important;
+    border-width: 0 0.1rem 0.1rem 0 !important;
+    cursor:pointer;
+}
+i.arrow-down:hover {
+	border: solid #000 !important;
+    border-width: 0 0.1rem 0.1rem 0 !important;
+}
+#main-container a {
+	color: #1e1e1e !important;
+}
+.container h1, .container h3 {
+	margin-bottom: 0 !important;
+    border-radius: 4px 4px 0 0;
+}
+.accordion-content {
+	flex-direction: column;
+	width: 100% !important;
+	height: 100% !important;
+	transform: scaleY(1) !important;
+}
+blockquote {
+    padding: 0 0 30px 20px
+}
+</style>
+<script>
+    var els = document.querySelectorAll('.accordion-item');
+    var symbol = document.querySelectorAll('.material-span');
+    for (var i=0; i < symbol.length; i++) {
+        symbol[i].insertAdjacentHTML('afterbegin', '<span class="material-symbols-outlined float-right" onclick="downloadThis(this)"></span>');
+    }
+    for (var i=0; i < els.length; i++) {
+        els[i].setAttribute("onclick","accordian(this);");
+        els[i].insertAdjacentHTML('beforeend', '<i class="arrow-down" onclick="downloadFrom(this)"></i>');
+    }
+    function accordian(elem) {
+        elem.scrollIntoView();
+        const elements = document.querySelectorAll('*');
+        elements.forEach((element) => {
+          element.classList.remove('accordion-item-show');
+        });
+    }
+    function downloadThis(elem) {
+        var pdfUrl = elem.nextSibling.getAttribute("href");
+        window.open(pdfUrl);
+    }
+    function downloadFrom(elem) {
+        var pdfs = elem.parentNode.nextElementSibling.querySelectorAll('.material-download a');
+        runDownload(pdfs);
+    }
+    function downloadAll() {
+        var pdfs = document.querySelectorAll('.material-download a');
+        runDownload(pdfs);
+    }
+    function runDownload(pdfs){
+        const urls = [];
+        for (var i=0; i < pdfs.length; i++) {
+            var addPDF = pdfs[i].getAttribute("href");
+            urls.push(addPDF);
+        }
+        let fetchFile = function(url) {
+            return fetch(url).then(res => res.blob());
+        }
+        let exportFile = function(file) {
+            let a = document.createElement('a');
+            a.href = URL.createObjectURL(file);
+            a.setAttribute('download', '');
+            a.click();
+        }
+        for(const url of urls) {
+            fetchFile(url).then(file => exportFile(file));
+        }
+
+    }
+</script>
+{{end}}

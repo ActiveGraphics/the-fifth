@@ -1,0 +1,29 @@
+{{define "main"}}
+<section class="body-font bg-gray-100">
+    <span class="material-symbols-outlined align-middle float-right pr-5 pt-5 text-gray-400">help</span>
+        <div id="main-container">
+                {{ .Content}}
+        </div>
+</section>
+<script>
+    var els = document.querySelectorAll('.accordion-item');
+    var symbol = document.querySelectorAll('.material-span');
+    for (var i=0; i < symbol.length; i++) {
+        symbol[i].insertAdjacentHTML('afterbegin', '<span class="material-symbols-outlined"></span>');
+    }
+    for (var i=0; i < els.length; i++) {
+        els[i].setAttribute("onclick","accordian(this);");
+        els[i].insertAdjacentHTML('beforeend', '<i class="arrow-down"></i>');
+    }
+    function accordian(elem) {
+        elem.scrollIntoView();
+        const elements = document.querySelectorAll('*');
+        elements.forEach((element) => {
+          element.classList.remove('accordion-item-show');
+        });
+        var itemContent = elem.nextElementSibling;
+        itemContent.classList.add("accordion-item-show")
+    }
+
+</script>
+{{end}}

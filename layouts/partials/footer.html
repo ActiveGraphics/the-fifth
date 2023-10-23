@@ -1,0 +1,36 @@
+<!-- Footer section -->
+
+{{ $alpine := resources.Get "js/alpine.js" | js.Build }}
+{{ $js := resources.Get "js/darkmode.js" | js.Build }}
+{{ if .Site.IsServer }}
+<script src="{{ $alpine.RelPermalink }}" defer></script>
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{ else }}
+{{ $alpine := $alpine | resources.Minify | fingerprint }}
+{{ $js := $js | resources.Minify | fingerprint}}
+<script src="{{ $alpine.RelPermalink }}" defer></script>
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{ end }}
+
+<!-- 
+<footer class="container mx-auto text-gray-600 body-font bg-white border-r border-l">
+  <div class="container px-5 py-12 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left">
+      {{ range .Site.Menus.bottommenu }}
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">{{.Name}}</h2>
+        <nav class="list-none mb-10">
+
+          {{ range .Children }}
+          <li>
+            <a href="{{ .URL }}" class="text-gray-500 hover:text-red-700">{{.Name}}</a>
+          </li>
+          {{ end }}
+        </nav>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</footer> -->
+
+</div>

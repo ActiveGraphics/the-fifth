@@ -1,0 +1,63 @@
+<div class="container mx-auto bg-gray-900 mb-4">
+  <div class="text-center text-gray-300 text-sm pt-8 font-small">
+    <!-- letter links -->
+    {{ range .Site.Menus.finalfooteritems }}
+    <div class="md:inline">
+      {{ if ne .Weight 10 }}
+      <a href="{{.URL}}" class="sm:ml-4 sm:pl-4 divide-x-2 hover:text-sky-800 md:border-l-2 md:border-gray-200 font-bold uppercase">{{.Name}}</a>
+      {{ else }}
+      <a href="{{.URL}}" class="sm:ml-4 divide-x-2 sm:pl-4 hover:text-sky-800 font-bold uppercase">{{.Name}}</a>
+      {{ end }}
+  </div>
+    {{ end }}
+  </div>
+
+  <!-- social media -->
+  <div class="text-center justify-center pt-8">
+    {{ range .Site.Menus.socialmedia }}
+    <a href="{{.URL}}" type="button" target="_blank"
+      class="mx-3 rounded-full text-gray-900 bg-gray-600 leading-normal uppercase hover:bg-red-500 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+      {{ .Params.SVG | safeHTML }}
+    </a>
+    {{ end }}
+  </div>
+
+  <!-- logo -->
+  <div class="sm:px-4 lg:px-12 lg:flex items-center text-center lg:text-left lg:justify-between pb-12">
+    <div class="lg:justify-start pt-6 lg:pt-0 main-logo-display">
+      <a href="/" aria-label="Logo">
+        {{ partial "logo-white.html"}}
+
+      </a>
+      <div class="text-gray-400 text-sm pt-5">
+          <span class="pr-1">
+            Email: 
+          </span>
+        <a href="mailto:mapleleaf@pbas.ca">mapleleaf@pbas.ca</a>
+        {{ range .Site.Menus.phones }}
+        <div>
+          <span class="pr-1">
+            Phone: 
+          </span>
+          <span>{{ .Params.tel }}</span>
+        </div>
+        <div>
+          <span class="pr-1">
+            Fax: 
+          </span>
+          <span>{{ .Params.fax }}</span>
+        </div>
+        <div>
+          <span class="pr-1">
+            Address: 
+          </span>
+          <span>{{ .Params.address }}</span>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

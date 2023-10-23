@@ -1,0 +1,9 @@
+baseURL = 'https://mapleleafhamilton.pbas.ca/'
+languageCode = 'en'
+title = 'UFCW Union/Maple Leaf Foods Inc. Benefit Plan'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
+DebugMenu = false
+
+[params]
+description = "UFCW Union/Maple Leaf Foods Inc. Benefit Plan"

@@ -1,0 +1,18 @@
+[home]
+    other = 'σπιτι'
+[Posts]
+    other = 'Αναρτήσεις'
+[News]
+    other = 'Νέα'
+[PrivacyPolicy]
+    other = 'Πολιτική Ασφαλείας'
+[About]
+    other = 'Σχετικά με μας'
+[Contact]
+    other = 'Επικοινωνήστε μαζί μας'
+[Allrightsreserved]
+    other = 'No rights reserved'
+[Madewith]
+    other = 'Φτιαγμένο με'
+[Categories]
+    other = 'Κατηγορίες'

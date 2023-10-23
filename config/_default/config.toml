@@ -1,0 +1,258 @@
+baseURL = 'http://localhost/'
+languageCode = 'en'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+DebugMenu = true
+disableLanguages = ['fr']
+
+[menu]
+[[menu.main]]
+  identifier = 'home'
+  name = 'Home'
+  url = '/'
+  weight = 10
+[[menu.main]]
+  identifier = 'announcements'
+  name = 'Announcements'
+  url = '/announcements/'
+  weight = 20
+[[menu.main]]
+  identifier = 'coverage'
+  name = 'Coverage'
+  url = '/coverage/'
+  weight = 30
+[[menu.main]]
+  identifier = 'download_forms'
+  name = 'Forms'
+  url = '/download_forms/'
+  weight = 40
+[[menu.main]]
+  identifier = 'faq'
+  name = 'FAQ'
+  url = '/faq/'
+  weight = 50
+[[menu.bottommenu]]
+  identifier = 'about'
+  name = 'about'
+  url = '/about/'
+  weight = 20
+[[menu.bottommenu]]
+  identifier = 'home'
+  name = 'Home'
+  url = '/'
+  weight = 10
+[[menu.bottommenu]]
+  parent = "home"
+  identifier = 'home2'
+  name = 'Home2'
+  url = '/'
+  weight = 10
+[[menu.bottommenu]]
+  parent = "home"
+  identifier = 'soc'
+  name = 'soc'
+  url = '/soc'
+  weight = 20
+
+[[menu.finalfooteritems]]
+  identifier = 'privacy'
+  name = 'Privacy Policy'
+  url = '/privacy/'
+  weight = 20
+[[menu.finalfooteritems]]
+  identifier = 'about'
+  name = 'About us'
+  url = '/about/'
+  weight = 10
+
+[[menu.forms]]
+  identifier = 'direct_deposit'
+  name = 'Direct Deposit'
+  url = '/forms/direct_deposit/'
+  weight = 20
+  [menu.forms.params]
+  description = "Direct Deposit"
+
+[[menu.downloads]]
+  identifier = 'mapleleafbrochurelondonmar202023digital'
+  name = 'UFCW Union/Maple Leaf Foods Inc. Benefit Brochure'
+  url = '/pdfs/mapleleafbrochurelondonmar202023digital.pdf'
+  weight = 10
+  [menu.downloads.params]
+  description = "UFCW Union/Maple Leaf Foods Inc. Benefit Brochure"  
+[[menu.downloads]]
+  identifier = '2022decemberlondonbooklet'
+  name = 'UFCW Union/Maple Leaf Foods Inc. Benefit Booklet'
+  url = '/pdfs/2022decemberlondonbooklet.pdf'
+  weight = 10
+  [menu.downloads.params]
+  description = "UFCW Union/Maple Leaf Foods Inc. Benefit Booklet"  
+[[menu.downloads]]
+  identifier = '2021majormegicalclaimformfillable'
+  name = 'Major Medical Claim Form'
+  url = '/pdfs/2021majormegicalclaimformfillable.pdf'
+  weight = 20
+  [menu.downloads.params]
+  description = "Major Medical Claim Form"  
+[[menu.downloads]]
+  identifier = '2023massagemedicalconditionreduced'
+  name = 'Massage Therapy Requirements'
+  url = '/pdfs/2023massagemedicalconditionreduced.pdf'
+  weight = 30
+  [menu.downloads.params]
+  description = "Massage Therapy Requirements"  
+[[menu.downloads]]
+  identifier = 'form1'
+  name = "Disability Income Benefits - Form 1 - Claimant's Statement"
+  url = '/pdfs/2023form1fillable.pdf'
+  weight = 40
+  [menu.downloads.params]
+  description = "Disability Income Benefits - Form 1 - Claimant's Statement"  
+[[menu.downloads]]
+  identifier = 'form2'
+  name = "Disability Income Benefits - Form 2 - Employer's Statement"
+  url = '/pdfs/2022form2fillable.pdf'
+  weight = 50
+  [menu.downloads.params]
+  description = "Disability Income Benefits - Form 2 - Employer's Statement"  
+[[menu.downloads]]
+  identifier = 'form3a'
+  name = "Disability Income Benefits - Form 3A - Physician's Statement"
+  url = '/pdfs/2014form3afillable.pdf'
+  weight = 60
+  [menu.downloads.params]
+  description = "Disability Income Benefits - Form 3A - Physician's Statement"  
+[[menu.downloads]]
+  identifier = 'mlrelease2013'
+  name = 'Authorization to Release Information'
+  url = '/pdfs/mlrelease2013.pdf'
+  weight = 70
+  [menu.downloads.params]
+  description = "Authorization to Release Information"  
+[[menu.downloads]]
+  identifier = 'agreetoreimbursegeneral2022'
+  name = 'Agreement to Reimburse'
+  url = '/pdfs/agreetoreimbursegeneral2022.pdf'
+  weight = 80
+  [menu.downloads.params]
+  description = "Agreement to Reimburse"  
+[[menu.downloads]]
+  identifier = '2023beneficiarydesignationform'
+  name = 'Beneficiary Designation Form'
+  url = '/pdfs/2023beneficiarydesignationform.pdf'
+  weight = 90
+  [menu.downloads.params]
+  description = "Beneficiary Designation Form"  
+[[menu.downloads]]
+  identifier = '2023registrationform'
+  name = 'Registration Form'
+  url = '/pdfs/2023registrationform.pdf'
+  weight = 100
+  [menu.downloads.params]
+  description = "Registration Form"  
+[[menu.downloads]]
+  identifier = '2019notificationofchange'
+  name = 'Notification of Change'
+  url = '/pdfs/2019notificationofchange.pdf'
+  weight = 110
+  [menu.downloads.params]
+  description = "Notification of Change"  
+
+# [[menu.socialmedia]]
+#   identifier = 'facebook'
+#   name = 'Facebook'
+#   url = 'https://facebook.com/'
+#   weight = 30
+#   [menu.socialmedia.params]
+#   SVG = "<svg class=\"w-5 h-full mx-auto\" viewBox=\"0 0 24 24\" ><path d=\"M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z\"/></svg>"
+
+[[menu.phones]]
+  identifier = 'Western'
+  weight = 10
+  [menu.phones.params]
+  address = "3rd Floor, 880 Portage Avenue, Winnipeg, Manitoba R3G 0P1"
+  tel = '1-877-982-4170' 
+  fax = '204-982-6080'
+
+[languages]
+  [languages.en]
+    title = 'UFCW Union/Maple Leaf Foods Inc. Benefit Plan'
+    languageCode = 'en'
+    weight = 1
+    LanguageName = 'English'
+
+  [languages.fr]
+    title = 'title fr'
+    languageCode = 'fr'
+    weight = 2
+    LanguageName = 'Ελληνικά'
+
+enableEmoji = true
+enableGitInfo = false
+canonifyURLs = true
+paginate = 9
+darkmode_js = ["assets/js/darkmode.js"]
+enableInlineShortcodes = true
+
+[params]
+defaultContentLanguage = 'en'
+author = "I3"
+github = "https://github.com/"
+sitename = "Base Solution"
+twitter = "https://twitter.com"
+description = "WHY Base Solution is a template"
+
+[taxonomies]
+category = "Categories"
+tag = "Tags"
+
+[privacy]
+[privacy.disqus]
+disable = false
+[privacy.googleAnalytics]
+anonymizeIP = true
+disable = false
+respectDoNotTrack = false
+useSessionStorage = false
+[privacy.instagram]
+disable = false
+simple = false
+[privacy.twitter]
+disable = false
+enableDNT = false
+simple = false
+[privacy.vimeo]
+disable = false
+enableDNT = false
+simple = false
+[privacy.youtube]
+disable = false
+privacyEnhanced = true
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.105.0"
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    noHl = false
+    style = 'monokai'
+    tabWidth = 4
+  [markup.goldmark]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.goldmark.parser.attribute]
+    block = true
+    title = true

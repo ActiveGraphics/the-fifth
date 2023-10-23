@@ -1,0 +1,40 @@
+<header class="text-gray-600 body-font header-negative-margin">
+  <div class="container bg-white border-r border-l border-b-2 mx-auto flex flex-wrap flex-col md:flex-row items-center menu-holder bg-blue-100">
+
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+      {{ if .HasChildren }}
+      <div x-data="nav" class="w-full  dropdown inline-block relative md:border-r  hover:bg-blue-500 md:w-auto text-center">
+        <a href="{{ .URL }}"
+          class='w-full border-t pl-5 px-6 py-3 md:w-auto md:border-r md:border-t hover:bg-blue-500 justify-center font-medium text-center leading-none inline-flex
+          {{ if eq $currentPage.RelPermalink .URL }} bg-blue-800  text-white py-2 {{ else }} hover:text-gray-900 {{ end }}'>
+          {{ .Name }}
+          <template x-if="open"  x-on:resize.window="resize_handler">
+          <span class="material-symbols-outlined align-bottom">expand_more</span>
+        </template>
+        </a>
+        <template x-if="open"  >
+        <ul  class="w-full dropdown-content absolute hidden text-gray-700 bg-white text-sm z-50 lg:w-60 lg:text-left">
+          {{ range .Children }}
+          <li><a class='border-l border-r border-b hover:bg-blue-500 py-2 px-4 block whitespace-no-wrap 
+              {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}' href="{{ .URL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </template>
+      
+      </div>
+      {{ else }}
+      <div class="w-full dropdown inline-block relative md:border-r  hover:bg-blue-500 md:w-auto text-center">
+      <a href="{{ .URL }}" class="w-full border-t pl-5 px-6 py-3 md:w-auto md:border-r md:border-t hover:bg-blue-500 justify-center font-medium text-center leading-none inline-flex 
+      {{ if eq $currentPage.RelPermalink .URL }} bg-blue-800  text-white py-2 {{ else }} hover:text-gray-900 {{ end }}">
+        {{ .Name }}
+      </a>
+      </div>
+      {{ end }}
+      {{ end }}
+    
+
+
+  </div>
+  </div>
+</header>

@@ -1,0 +1,125 @@
+{{define "main"}}
+<section class="body-font">
+    <div class="container content-start bg-blue-800">
+        <!-- Booklet Button -->
+        <div class="active-banner align-middle">
+            <a class="active-white banner-link" href="{{ $.Page.Params.image_link }}">
+                <img class="float-left mr-5" src="{{ $.Page.Params.image }}" width="200" />
+                <h2 class="active-white pt-2">{{ $.Page.Params.image_link_body }}</h2>
+                <span class="pt-2 active-icon material-symbols-outlined text-blue-800 inline-block">download</span>
+            </a>
+        </div>
+        <!-- END Booklet Button -->
+        <!-- Title -->
+        <div class="p-6 columns-1 text-left">
+            <h1 class="main-title">{{ $.Page.Params.title }}</h1>
+            <h2 class="main-subtitle">{{ $.Page.Params.main_subtitle }}</h2>
+        </div>
+        <!-- END Title -->
+        <!-- Start rounded box -->
+        <section id="main-section" class="mx-6 rounded-3xl bg-white">
+            <div id="main-container"> {{ $.Page.Content}} </div>
+        </section><!-- END container -->
+        <!-- FOOTER -->
+        <div class="grid-container-footer p-4 bg-blue-800">
+          <div>
+              <img src="/img/share_icon.svg" width="200" height="200" />
+            </div>
+          <div class="text-left">
+            <h1 class="font-bold text-yellow-300">{{ $.Page.Params.section10_title }}</h1>
+            <p class="active-white">{{ $.Page.Params.section10_body1 }}</p>
+            <p class="active-white">{{ $.Page.Params.section10_body2 }} <br>
+                {{ $.Page.Params.section10_body2_2 }}<a href="https://{{ $.Page.Params.section10_body2_link }}">{{ $.Page.Params.section10_body2_link }}</a></p>
+            <p class="active-white">{{ $.Page.Params.section10_body3 }}
+                {{ $.Page.Params.section10_body3 }}<a href="mailto:{{ $.Page.Params.section10_link3 }}">{{ $.Page.Params.section10_link3 }}</a></p>
+            <p class="active-white">{{ $.Page.Params.section10_body4 }}</p>
+          </div>
+       </div>
+        <!-- END FOOTER -->
+    </div>
+</section>
+<h1 class="text-black p-11 w-full text-center text-black">{{ $.Page.Params.section11_body }} <a class="text-blue-800" href="tel:{{ $.Page.Params.section11_link }}">{{ $.Page.Params.section11_link_text }}</a>
+</h1>
+<style>
+    h1.main-title {
+        color:#fff !important;
+        padding:0 !important;
+    }
+    h1,h2,h3 {
+        margin-left:0 !important;   
+    }
+    ul {
+        padding: 0.625rem;
+    }
+    #toggle-tab li {
+        list-style-type: none !important;
+    }
+    .active-cell h1 {
+        font-size:2.25rem;
+        text-align:center;
+        vertical-align:bottom;
+         display: flex;
+        justify-content: center;
+        margin:1.25rem;
+   }
+    #main-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-column-gap: 5px;
+        grid-auto-rows: min-content;
+        margin-top:0 !important;
+    }
+    #main-container > block:nth-child(2) {
+      background: #d5d5d5;
+    }
+    .active-cell {
+        padding:1.25rem;
+        border-bottom:3px dotted #d5d5d5;
+    }
+    .active-cell-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .active-cell-no-padding {
+        padding:0 !important;
+    }
+    .active-transparent {
+        background:transparent !important;
+    }
+    .bg-blue-700 {
+	    background: #054b91 !important;
+    }
+    .active-cell-no-padding {
+        padding:0 !important;
+    }
+    @media (max-width: 767px) {
+        #main-container {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<script>
+    var els = document.querySelectorAll('.show-cell');
+    var els2 = document.querySelectorAll('.hide-cell');
+    for (var i=0; i < els.length; i++) {
+        els[i].setAttribute("onclick","accordian(this);");
+        els2[i].setAttribute("onclick","accordian(this);");
+    }
+    function accordian(elem) {
+        console.log("Clicked!");
+        var ela = document.querySelectorAll('.show-cell');
+        var elb = document.querySelectorAll('.hide-cell');
+        ela.forEach((element) => {
+          element.classList.remove('show-cell');
+          element.classList.add('hide-cell');
+        });
+        elb.forEach((element) => {
+          element.classList.add('show-cell');
+          element.classList.remove('hide-cell');
+        });
+    }
+
+</script>
+
+{{end}}

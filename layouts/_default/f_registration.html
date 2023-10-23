@@ -1,0 +1,10 @@
+{{define "main"}}
+<section class="body-font">
+
+  {{ $forms := resources.Get "js/public-forms.js" | js.Build }}
+  <script src="{{ $forms.RelPermalink }}" defer></script>
+  <register-form api="https://forms.pbasconnect.com"></register-form>
+
+</section>
+
+{{end}}

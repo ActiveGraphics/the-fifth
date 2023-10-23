@@ -1,0 +1,103 @@
+{{define "main"}}
+<div id="announcements" class="bg-gray-100">
+  <div id="announcement-container" class="w-full">
+    <span class="material-symbols-outlined align-middle float-right pr-3 pt-3 text-gray-500">live_help</span>
+    <div id="main-container"> {{ $.Page.Content}} </div>
+  </div>
+</div>
+<style>
+    #announcement-container {
+        padding:0 !important;
+        margin:0 !important;
+    }
+    #main-container {
+        margin: inherit;
+    }
+    .notice {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        min-height:18.75rem;
+        padding: 3rem;
+        vertical-align:middle;
+    }
+    .notice h1,.notice h2 {
+        text-align:center !important;
+        vertical-align:middle;
+        font-size: x-large !important;
+    }
+    .notice p,blockquote p {
+        margin-top:10px;
+        font-size: 1.125rem !important;
+        line-height: 1.75rem;
+        text-align:center !important;
+    }
+    .notice-text {
+        text-align:center !important;
+    }
+    .notice-massage {
+        background-image: url(/img/banner_bg_massage.png);
+    }
+    .notice1 {
+        background-image: url(/img/notice_bg_yellow.png);
+    }
+    .notice2 {
+        background-image: url(/img/notice2.jpg);
+        color:#ffffff !important;
+    }
+    .notice2 h1,.notice2 h2,.notice2-title {
+        color:#ffde00 !important;
+    }
+    ul.notice2-body {
+        list-style-position: inside;
+        margin: 0 auto;
+	    max-width: 80%;
+        border-top:1px solid #d5d5d5;
+        padding-top:25px;
+        margin-top:25px;
+    }
+    .notice-bg-red {
+        background-image: url(/img/notice_bg_red.jpg);
+    }
+    .notice-bg-yellow {
+        background-image: url(/img/notice_bg_yellow.jpg);
+    }
+    .notice-bg-blue {
+        background-image: url(/img/notice_bg_blue.jpg);
+    }
+    .notice1 figure img {
+        margin:0 auto;
+    }
+    .show-cell {
+        text-align:left !important;
+        color:#000000;
+    }
+</style>
+<script>
+    var els = document.querySelectorAll('.show-cell');
+    var els2 = document.querySelectorAll('.hide-cell');
+    var symbol = document.querySelectorAll('.material-span');
+    for (var i=0; i < symbol.length; i++) {
+        symbol[i].insertAdjacentHTML('afterbegin', '<span class="material-symbols-outlined"></span>');
+    }
+    for (var i=0; i < els.length; i++) {
+        els[i].setAttribute("onclick","accordian(this);");
+        els2[i].setAttribute("onclick","accordian(this);");
+    }
+    function accordian(elem) {
+        console.log("Clicked!");
+        var ela = document.querySelectorAll('.show-cell');
+        var elb = document.querySelectorAll('.hide-cell');
+        ela.forEach((element) => {
+          element.classList.remove('show-cell');
+          element.classList.add('hide-cell');
+        });
+        elb.forEach((element) => {
+          element.classList.add('show-cell');
+          element.classList.remove('hide-cell');
+        });
+    }
+
+</script>
+
+{{end}} 

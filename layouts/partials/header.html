@@ -1,0 +1,54 @@
+<header class="text-gray-600 body-font relative">
+  <div class="text-white bg-gray-900 container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-end justify-items-end relative min30">
+    <div class="flex-2 relative inline-block text-left dropdown ">
+    {{if gt (len $.AllTranslations) 0 }}
+      <span class="rounded-md shadow-sm">
+        <button
+          class="inline-flex justify-center float-right px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out   rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
+          type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
+          <span>{{ if eq .Params.language "en" }} English {{ else if eq .Params.language "fr" }} Français  {{ end }}</span>
+          
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </span>
+      <div
+        class="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
+        <div
+          class="absolute right-0 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
+          aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
+          <div class="py-1">
+            <a href="/" tabindex="0"
+              class="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-blue-200"
+              role="menuitem">English
+            </a>
+            <a href="/fr/" tabindex="1"
+              class="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left hover:bg-blue-200"
+              role="menuitem">Français
+            </a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+   </div>
+   <div class="topbar-1-inner">
+    <ul class="topbar-info topbar-info-1 mx-2">
+      <li><span>Email :</span>&nbsp;&nbsp;<a class="top-bar" href="mailto:mapleleaf@pbas.ca">mapleleaf@pbas.ca</a></li>
+      <li><span>Phone :</span>&nbsp;&nbsp;<a class="top-bar" href="tel:18779826087">1-877-982-4170</a></li>
+    </ul>
+  </div>
+</div>
+    <div class="container mx-auto logo-wrapper">
+        <div class="inline-flex-header">
+        <a class="flex title-font font-medium items-center text-logo-blue mb-4 md:mb-0" aria-label="Logo" href="\">
+          <div class="w-full h-9 main-logo-display">{{ partial "logo.html" }}</div>
+        </a>
+        </div>
+        <div class="inline-flex-header">
+              <div class="title-text h-5 absolute-title">{{ .Site.Title }}</div>
+        </div>
+    </div>
+</header>

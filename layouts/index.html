@@ -1,0 +1,127 @@
+{{define "main"}}
+<section class="notice">
+    <div class="container mx-auto flex md:flex-row flex-col content-start">
+        <div id="modal">
+            <button onclick="closeNotice()" class="closer">x</button>
+            <span class="material-symbols-outlined align-top float-left pr-3 text-yellow-500">announcement</span>
+            <div class="text-justify max-w-none pb-16 mx-auto prose ">
+                <h3>{{ $.Page.Params.notice}}</h3>
+                <p><strong>{{ $.Page.Params.notice_title_body}}</strong></p>
+                <h4 class="uppercase">{{ $.Page.Params.notice_subtitle}}</h4>
+                <p>{{ $.Page.Params.notice_subtitle_body}}</p>
+                <p>If you have any questions, please call PBAS at <a class="text-yellow-500" href="tel:18779824170">1-877-982-4170</a> or email at <a class="text-yellow-500" href="mailto:mapleleaf@pbas.ca">mapleleaf@pbas.ca</a>.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="h-96 bg-cover bg-no-repeat bg-center relative -mr-12 -ml-12 -mt-12 pr-12 mb-0 heroimage">
+  <div class="hero-text">
+    <h2 class="text-white text-2xl leading-snug w-full mb-1 font-extrabold tracking-widest lg:text-4xl lg:w-8/12 lg:mb-5">{{ $.Page.Params.image_subtitle }}<br>{{ $.Page.Params.image_subtitle2 }}<br>{{ $.Page.Params.image_subtitle3 }}</h2>
+    <h2 class="text-base text-white leading-snug lg:leading-relaxed">{{ $.Page.Params.image_subtext }}</h2>
+  </div>
+</div>
+<div class="portal-banner">
+    <a class="text-white" href="{{ $.Page.Params.portal_url }}">
+      <div class="p-2 inline-flex">
+        <h1 class="max-width-9em text-lg text-white font-extrabold sm:text-xl">{{ $.Page.Params.portal_button }}</h1>
+      </div>
+    </a>
+</div>
+<section class="content">
+  {{ $.Page.Content}} 
+</section>
+<link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+<div class="video-title">{{ $.Page.Params.video_title}}</div>
+<video
+id="my-video"
+class="video-js w-full"
+controls
+preload="auto"
+width="100%"
+height="100%"
+poster="/videos/we-have-you-covered.png"
+data-setup="{}"
+>
+  <source src="/videos/WelcomeTour-Mapleleaf.mp4" type="video/mp4" />
+  <p class="vjs-no-js"> To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank" rel="noopener">supports HTML5 video</a></p>
+</video>
+<script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+<style>
+#my-video {margin:0 auto;}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+#modal {  
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  background: #b91d1b;
+  padding: 30px;
+  color:#ffffff;
+}
+#modal p,#modal h3,#modal h4 {
+  color:#ffffff !important;
+}
+.closer {
+    float:right;
+    font-weight:bold;
+    color:#ffffff;
+    font-size:24px;
+}
+.content {
+    display:block;
+    padding:25px 50px;
+}
+    .content p {
+        margin-bottom:10px;
+    }
+    .heroimage {
+        position:relative;
+    }
+    .hero-text {
+        position:absolute;
+        bottom:10px;
+        left:80px;
+        text-align: left;
+    }
+    .video-title {
+        padding:25px;
+        text-align:center;
+        font-size:20px;
+        font-weight:bold;
+        width:100%;
+        background:#95bde2;
+    }
+    .portal-banner {
+        padding:25px;
+        text-align:center;
+        font-size:20px;
+        font-weight:bold;
+        width:100%;
+        background:#111827;
+        color:#ffffff;
+    }
+    .uppercase {
+        text-transform:uppercase;   
+    }
+    .container h1 {
+        color:#ffffff !important;
+        font-size: 34px;
+    }
+</style>
+<script>
+    function closeNotice() {
+      var x = document.getElementById("modal");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+</script>
+
+
+{{ end }}

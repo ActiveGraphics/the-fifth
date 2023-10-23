@@ -1,0 +1,16 @@
+{{define "main"}}
+<section class="body-font">
+    <div class="container mx-auto flex px-5  md:flex-row flex-col content-start">
+        <div>
+            <div class="text-justify max-w-none pb-16 mx-auto prose ">
+                {{ .Content}}
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .container h2, .container h4 {
+	    margin-left: 0px;
+    }
+</style>
+{{end}}

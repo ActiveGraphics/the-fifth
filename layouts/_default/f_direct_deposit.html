@@ -1,0 +1,8 @@
+{{define "main"}}
+<section class="body-font">
+  <!-- <script src="/public-plans-forms-lib.umd.js" nonce="skata" defer></script> -->
+  {{ $forms := resources.Get "js/public-forms.js" | js.Build }}
+  <script src="{{ $forms.RelPermalink }}" defer></script>
+  <direct-deposit-form bank-validation-api="http://10.0.20.210:88/api/BankAddressInfo" api="https://forms.pbasconnect.com"></direct-deposit-form>
+</section>
+{{end}}
